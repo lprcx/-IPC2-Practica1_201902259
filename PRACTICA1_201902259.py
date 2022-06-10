@@ -1,5 +1,9 @@
 from Pila import Pila
+from ListaEnlazada import Cliente, ListaEnlazada
+from Cola import Cola
 pila_carritos=Pila()
+lista_clientes=ListaEnlazada()
+cola_pagos=Cola()
 
 def Ingresodatos():
     global pila_carritos
@@ -20,7 +24,39 @@ def Ingresodatos():
         pila_carritos.Mostrar()
     else:
         print("Ingrese un número válido de carritos")
-        
+
+contador_clientes=1
+def NuevoCliente():
+    global contador_clientes
+    nombre=input("Ingrese el nombre del nuevo cliente: ")
+    id=contador_clientes
+    carro = pila_carritos.Pop()
+    if carro!= None:
+        nuevo = Cliente(id, nombre)
+        lista_clientes.Insertar(nuevo)
+        lista_clientes.AgregarCarrito(id, carro.id)
+        contador_clientes+=1
+        print("Cliente agregado con éxito con ID: " + str(id))
+    else:
+        print("No se pudo agregar al cliente, no hay carritos disponibles")
+
+def VerCliente():
+    global lista_clientes
+    global cola_pagos
+    idc = input("Ingrese el ID del cliente: ")
+    if lista_clientes.ObtenerCliente(int(idc))!=None:
+        lista_clientes.MostrarCliente(int(idc))
+        opcion = input("Desea Pagar? (S/N): ")
+        if opcion == "S":
+            cliente = lista_clientes.Eliminar(int(idc))
+            cola_pagos.Encolar(cliente)
+            print("Cliente agregado a cola de caja")
+        elif opcion == "N":
+            pass
+        else:
+            print("Seleccione una opción válida")
+    else:
+        print("Cliente no encontrado")
 
 def Menu():
     while(True):
@@ -37,9 +73,9 @@ def Menu():
         if opcion==1:
             Ingresodatos()
         elif opcion==2:
-            pass
+            NuevoCliente()
         elif opcion==3:
-            pass
+            VerCliente()
         elif opcion==4:
             pass
         elif opcion==5:
