@@ -58,6 +58,31 @@ def VerCliente():
     else:
         print("Cliente no encontrado")
 
+def CajaRegistradora():
+    if cola_pagos.cabeza!=None:
+        print("Se está atendiendo actualmente al cliente " + cola_pagos.cabeza.cliente.nombre)
+        print("1. Avanzar")
+        print("2. Regresar")
+        opcion = int(input("Ingrese una opción: "))
+        if opcion==1:
+            print("El cliente ha salido de la cola")
+            cliente=cola_pagos.Desencolar()
+            carrito = cliente.carrito
+            pila_carritos.Push(carrito)
+        elif opcion ==2:
+            pass
+        else:
+            print("Seleccione una opción válida")
+
+def VisualizarDatos():
+    print("Pila de Carritos: ")
+    pila_carritos.Mostrar()
+    print("\nLista Usuarios: ")
+    lista_clientes.Mostrar()
+    print("\nCola Caja Registradora: ")
+    cola_pagos.Mostrar()
+    print("")
+
 def Menu():
     while(True):
         print("------------MENÚ PRINCIPAL-----------")
@@ -77,9 +102,9 @@ def Menu():
         elif opcion==3:
             VerCliente()
         elif opcion==4:
-            pass
+            CajaRegistradora()
         elif opcion==5:
-            pass
+            VisualizarDatos()
         elif opcion==6:
             break
         else:

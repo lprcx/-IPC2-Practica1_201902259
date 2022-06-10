@@ -24,3 +24,9 @@ class Cola():
             temporal = self.cabeza
             self.cabeza = self.cabeza.siguiente
             return temporal.cliente
+            
+    def Mostrar(self):
+        actual=self.cabeza
+        while(actual!=None):
+            print(actual.cliente.nombre + " - carro " + str(actual.cliente.carrito) + ", ", end="")
+            actual=actual.siguiente

@@ -61,3 +61,9 @@ class ListaEnlazada():
             return None
         else:
             print("No se encontró al cliente")
+    
+    def Mostrar(self):
+        actual=self.cabeza
+        while(actual!=None):
+            print(actual.cliente.nombre + " - carro " + str(actual.cliente.carrito) + ", ", end="")
+            actual=actual.siguiente
