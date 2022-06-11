@@ -47,18 +47,19 @@ class ListaEnlazada():
     def Eliminar(self, idc):
         temporal = self.ObtenerCliente(idc)
         if temporal!=None:
-            actual=self.cabeza
-            while(actual!=None):
-                if actual.siguiente == temporal:
-                    actual.siguiente = temporal.siguiente
-                    self.tamanio-=1
-                    return temporal.cliente
-                elif self.tamanio==1:
-                    self.cabeza=None
-                    self.tamanio-=1
-                    return temporal.cliente
-                actual=actual.siguiente
-            return None
+            if temporal==self.cabeza:
+                aux=self.cabeza
+                self.cabeza=self.cabeza.siguiente
+                return aux.cliente
+            else:
+                actual=self.cabeza
+                while(actual!=None):
+                    if actual.siguiente == temporal:
+                        actual.siguiente = temporal.siguiente
+                        self.tamanio-=1
+                        return temporal.cliente
+                    actual=actual.siguiente
+                return None
         else:
             print("No se encontró al cliente")
     

@@ -15,6 +15,7 @@ class Cola():
             actual = self.cabeza
             while(actual!=None):
                 actual = actual.siguiente
+                break
             actual.siguiente = nuevo
     
     def Desencolar(self):

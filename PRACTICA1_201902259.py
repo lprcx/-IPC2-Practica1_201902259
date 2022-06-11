@@ -85,29 +85,31 @@ def VisualizarDatos():
 
 def Menu():
     while(True):
-        print("------------MENÚ PRINCIPAL-----------")
-        print("1. Ingreso de datos")
-        print("2. Nuevo Cliente")
-        print("3. Ver Cliente")
-        print("4. Caja Registradora")
-        print("5. Visualizar Datos")
-        print("6. Salir")
-        print("Seleccione una opción")
-        opcion = 0
-        opcion = int(input())
-        if opcion==1:
-            Ingresodatos()
-        elif opcion==2:
-            NuevoCliente()
-        elif opcion==3:
-            VerCliente()
-        elif opcion==4:
-            CajaRegistradora()
-        elif opcion==5:
-            VisualizarDatos()
-        elif opcion==6:
-            break
-        else:
+        try:
+            print("------------MENÚ PRINCIPAL-----------")
+            print("1. Ingreso de datos")
+            print("2. Nuevo Cliente")
+            print("3. Ver Cliente")
+            print("4. Caja Registradora")
+            print("5. Visualizar Datos")
+            print("6. Salir")
+            print("Seleccione una opción")
+            opcion = 0
+            opcion = int(input())
+            if opcion==1:
+                Ingresodatos()
+            elif opcion==2:
+                NuevoCliente()
+            elif opcion==3:
+                VerCliente()
+            elif opcion==4:
+                CajaRegistradora()
+            elif opcion==5:
+                VisualizarDatos()
+            elif opcion==6:
+                break
+            else:
+                print("Seleccione una opción válida")
+        except:
             print("Seleccione una opción válida")
-    
 Menu()
