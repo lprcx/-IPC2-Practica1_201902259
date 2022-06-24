@@ -1,0 +1,28 @@
+.centrado{
+    background: white;
+    position:relative;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 375px;
+    margin-top: 10%;
+    margin-left: -320px;
+    padding-top: 10px;
+}
+.foto{
+    background-image: url(https://scontent.faqb1-1.fna.fbcdn.net/v/t39.30808-6/279427883_4674812552624519_6882134591840949298_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=QGk_7i54Tw8AX_d5i40&_nc_ht=scontent.faqb1-1.fna&oh=00_AT8JAx5T01H1XAafGnxhMCODFKdoBZUSMmRdBuGSN9_3xw&oe=62BAF156);
+    background-size: 100% 100%;
+    width: 200px;
+    height: 270px;
+    margin: 50px;
+    float: left;
+}
+.nombre{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 150%;
+    color: rgb(82, 57, 185);
+    width: 340px;
+    height: 270px;
+    margin: 50px;
+    margin-left: 300px;
+}
